@@ -1,0 +1,53 @@
+.header-container {
+  display: flex;
+  width: 100vw;
+  height: 45vh;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+.light {
+  background-image: url("../../../images/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.night {
+  background-image: url("../../../images/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-container-inner {
+  display: flex;
+  width: 33vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  color: white;
+}
+.header-mode-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.header-mode-button:focus {
+  outline: none;
+}
+.header-background-themed {
+  width: 100vw;
+  height: 100vh;
+  
+}
+.header-backgroud-themed-dark{
+    background-color: hsl(235, 24%, 19%);
+}
+.header-backgroud-themed-light{
+    background-color: hsl(240, 13%, 95%);
+}

@@ -1,0 +1,40 @@
+.itemsList-container {
+  position: absolute;
+  top: 42vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.itemList-container-inner {
+  display: flex;
+  align-items: center;
+  background-color: hsl(235, 19%, 35%);
+  border-bottom: solid 1px hsl(234, 12%, 51%)  ;
+
+  width: 33vw;
+  height: 60px;
+}
+.itemsList-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.itemsList-button:focus {
+  outline: none;
+}
+.itemsList-button-inside {
+  width: 20px;
+  height: 20px;
+  border: solid 1px hsl(0, 0%, 98%);
+  border-radius: 100%;
+  opacity: 50%;
+  margin: 0 20px 0 20px;
+}
+.itemsList-item {
+  color: beige;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+}
