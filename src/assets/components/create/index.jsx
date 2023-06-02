@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import "./index.css";
 
@@ -20,7 +19,9 @@ const Create = ({ onCreateTodo }) => {
     <>
       <div className="create-container">
         <div className="create-inner-container">
-          <div className="create-icon"></div>
+          <button className="create-button">
+            <div className="itemsList-button-inside"></div>
+          </button>
           <input
             className="create-input"
             type="text"

@@ -23,6 +23,32 @@
  opacity: 50%;
  margin: 0 20px 0 20px;
 }
+.create-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.create-button:focus {
+  outline: none;
+}
+.create-button-inside {
+  width: 20px;
+  height: 20px;
+  border: solid 1px hsl(0, 0%, 98%);
+  border-radius: 100%;
+  opacity: 50%;
+  margin: 0 20px 0 20px;
+}
+.create-button-inside-completed {
+  background: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  ) !important;
+  background-image: url(../../../../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .create-input{
     width: 100%;
     margin-right: 20px;

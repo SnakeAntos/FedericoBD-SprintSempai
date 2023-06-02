@@ -1,5 +1,10 @@
 import "./index.css";
+
 const Bottom = (props) => {
+  const handleClearCompleted = () => {
+    props.onClearCompleted();
+  };
+
   return (
     <>
       <div className="bottom-container">
@@ -11,17 +16,18 @@ const Bottom = (props) => {
           </div>
           <div className="bottom-menu-container">
             <ul className="bottom-menu-list">
-              <li className="bottom-menu-list-item">All</li>
-              <li className="bottom-menu-list-item">Active</li>
-              <li className="bottom-menu-list-item">Completed</li>
+              <li className="bottom-menu-list-item" onClick={() => props.setFilter("all")}>All</li>
+              <li className="bottom-menu-list-item" onClick={() => props.setFilter("active")}>Active</li>
+              <li className="bottom-menu-list-item" onClick={() => props.setFilter("completed")}>Completed</li>
             </ul>
           </div>
           <div className="bottom-menu-container">
-            <button className="bottom-menu-clear">Clear Completed</button>
+            <button onClick={handleClearCompleted} className="bottom-menu-clear">Clear Completed</button>
           </div>
         </div>
       </div>
     </>
   );
 };
+
 export default Bottom;

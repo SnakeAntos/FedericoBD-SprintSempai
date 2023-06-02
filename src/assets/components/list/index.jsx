@@ -1,31 +1,50 @@
 import "./index.css";
-import Bottom from "../bottom/index.jsx";
 import { useState } from "react";
+import Bottom from "../bottom/index.jsx";
+
 const ItemsList = (props) => {
-   
-    const handleCompleted = (elements) => {
-        let count = 0;
-        for (let index = 0; index < elements.length; index++) {
-          if (!elements[index].completed) {
-            count++;
-          }
-        }
-        return count;
-      };
-  
-    return (
+  const [filter, setFilter] = useState("all");
+
+  const handleToggleCompleted = (index) => {
+    const updatedList = [...props.listItem];
+    updatedList[index].completed = !updatedList[index].completed;
+    props.setList(updatedList);
+  };
+
+  const filterItems = () => {
+    switch (filter) {
+      case "active":
+        return props.listItem.filter(item => !item.completed);
+      case "completed":
+        return props.listItem.filter(item => item.completed);
+      default:
+        return props.listItem;
+    }
+  };
+
+  return (
     <>
       <div className="itemsList-container">
-        {props.listItem.map((item, index) => (
+        {filterItems().map((item, index) => (
           <div key={index} className="itemList-container-inner">
-            <button className="itemsList-button">
-              <div className="itemsList-button-inside"></div>
+            <button
+              className="itemsList-button"
+              onClick={() => handleToggleCompleted(index)}
+            >
+              <div
+                className={`itemsList-button-inside ${
+                  item.completed ? "itemsList-button-inside-completed" : ""
+                }`}
+              ></div>
             </button>
             <p className="itemsList-item">{item.texto}</p>
-            {/* <p className="itemsList-item">{item}</p> */}
           </div>
         ))}
-        <Bottom elements={handleCompleted(props.listItem)} />
+        <Bottom
+          elements={filterItems().length}
+          onClearCompleted={props.onClearCompleted}
+          setFilter={setFilter}
+        />
       </div>
     </>
   );
