@@ -49,3 +49,11 @@
 .bottom-menu-clear:focus {
   outline: none;
 }
+.bottom-container-inner-light{
+  background-color: rgb(228, 226, 223);
+  color: black;
+}
+.bottom-menu-list-light{
+  color: black;
+
+}

@@ -14,9 +14,9 @@ const ItemsList = (props) => {
   const filterItems = () => {
     switch (filter) {
       case "active":
-        return props.listItem.filter(item => !item.completed);
+        return props.listItem.filter((item) => !item.completed);
       case "completed":
-        return props.listItem.filter(item => item.completed);
+        return props.listItem.filter((item) => item.completed);
       default:
         return props.listItem;
     }
@@ -26,24 +26,26 @@ const ItemsList = (props) => {
     <>
       <div className="itemsList-container">
         {filterItems().map((item, index) => (
-          <div key={index} className="itemList-container-inner">
+          <div key={index} className={`itemList-container-inner ${props.theme === "light" ? "light-theme-container" : "dark-theme"}`}
+           >
             <button
-              className="itemsList-button"
+              className={`itemsList-button ${props.theme === "light" ? "light-theme-button-itemList" : "dark-theme"}`}
+              
               onClick={() => handleToggleCompleted(index)}
             >
               <div
-                className={`itemsList-button-inside ${
-                  item.completed ? "itemsList-button-inside-completed" : ""
-                }`}
+                className={`itemsList-button-inside ${item.completed ? "itemsList-button-inside-completed" : ""}
+                 ${props.theme === "light" ? "light-theme-button-inside-light" : "dark-theme-button-inside"}`}
               ></div>
             </button>
-            <p className="itemsList-item">{item.texto}</p>
+            <p className={`itemsList-item ${props.theme === "light" ? "itemsList-item-light" : "place-holder-themeyoquese"}`}>{item.texto}</p>
           </div>
         ))}
         <Bottom
           elements={filterItems().length}
           onClearCompleted={props.onClearCompleted}
           setFilter={setFilter}
+          theme={props.theme} 
         />
       </div>
     </>
@@ -51,3 +53,6 @@ const ItemsList = (props) => {
 };
 
 export default ItemsList;
+
+
+

@@ -21,9 +21,24 @@ function App() {
 
   return (
     <>
-      <Header background={background} setBackground={setBackground} theme={theme} setTheme={setTheme} />
-      <Create onCreateTodo={handleCreateTodo} />
-      <ItemsList setList={setList} listItem={list} onClearCompleted={handleClearCompleted} />
+      <Header
+        background={background}
+        setBackground={setBackground}
+        theme={theme}
+        setTheme={setTheme}
+      />
+      <Create
+        onCreateTodo={handleCreateTodo}
+        theme={theme}
+        setTheme={setTheme}
+      />
+      <ItemsList
+        setList={setList}
+        listItem={list}
+        onClearCompleted={handleClearCompleted}
+        theme={theme}
+        setTheme={setTheme}
+      />
     </>
   );
 }
