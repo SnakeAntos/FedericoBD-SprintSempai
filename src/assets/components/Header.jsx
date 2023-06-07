@@ -1,6 +1,6 @@
 import "./header.css";
-import '/images/icon-moon.svg'
-import "/images/icon-sun.svg"
+import moonImg from'/images/icon-moon.svg'
+import sunImg from "/images/icon-sun.svg"
 
 const Header = (props) => {
   
@@ -21,7 +21,7 @@ const Header = (props) => {
               }}
               className="header-mode-button">
               <img
-                src={props.theme === 'light' ? "/images/icon-moon.svg" : "/images/icon-sun.svg"}
+                src={props.theme === 'light' ? moonImg : sunImg}
                 className='header-mode-button-img'
                 alt="Theme Icon"
               />
