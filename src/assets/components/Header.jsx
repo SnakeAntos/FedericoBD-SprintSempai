@@ -1,4 +1,6 @@
 import "./header.css";
+import '/images/icon-moon.svg'
+import "/images/icon-sun.svg"
 
 const Header = (props) => {
   
