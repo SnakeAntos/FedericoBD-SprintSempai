@@ -43,11 +43,38 @@
 .header-background-themed {
   width: 100vw;
   height: 100vh;
+}
+.header-backgroud-themed-dark {
+  background-color: hsl(235, 24%, 19%);
+}
+.header-backgroud-themed-light {
+  background-color: hsl(240, 13%, 95%);
+}
+
+@media (max-width: 375px) {
+  .header-container {
+    width: 100vw;
+    height: 45vh;
+  }
+  .header-container-inner{
+    position: fixed;
+    top: 8vh;   
+    width: 90vw;    
+    align-items: center;
+  }
+  .light {
+    background-image: url("../../../images/bg-mobile-light.jpg");
+    
+  }
+  .night {
+    background-image: url("../../../images/bg-mobile-dark.jpg");    
+  }
+  .header-logo {    
+    font-size: 0.7rem;
+    color: white;
+  }
+  .header-mode-button-img{
+    margin-bottom: 10px;
+  }
   
-}
-.header-backgroud-themed-dark{
-    background-color: hsl(235, 24%, 19%);
-}
-.header-backgroud-themed-light{
-    background-color: hsl(240, 13%, 95%);
 }

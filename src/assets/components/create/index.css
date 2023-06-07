@@ -77,3 +77,16 @@
 .dark-theme {
   color: aliceblue;
 }
+@media (max-width: 375px) {
+.create-inner-container { 
+  width: 90vw;  
+}
+.create-container {
+  width: 100vw;
+  position: absolute;
+  top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
